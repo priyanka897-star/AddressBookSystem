@@ -1,8 +1,5 @@
 package addressbooksystem;
 
-//import com.bl.aquarium.AddressBookStore;
-//import com.bl.aquarium.AddressBookInterface;
-
 public class AddressBookMain {
 
 	public static void main(String[] args) {
@@ -84,9 +81,9 @@ public class AddressBookMain {
 		personContact1.setZip(is2.inputString());
 		System.out.println("Enter  Phone Number");
 		personContact1.setPhoneNumber(is1.inputString());
-		is.scannerClose();
-		is1.scannerClose();
-		is2.scannerClose();
+		//is.scannerClose();
+		//is1.scannerClose();
+		//is2.scannerClose();
 		
 		AddressBookStore addressBookStore = new AddressBookStore();
         addressBookStore.Add(contact);
@@ -95,6 +92,18 @@ public class AddressBookMain {
         
 		AddressBookInterface addressBookInterface = new AddressBookInterface();
 		addressBookInterface.print(addressBookStore.getContactList());
-
+		
+		InputScanner is3 = new InputScanner();
+		System.out.println("Enter name of contact you want to edit");
+		String name = is3.inputString();
+		if(contact.getFirstName().equalsIgnoreCase(name) == true)
+			addressBookInterface.edit(contact);
+		else if(personContact.getFirstName().equalsIgnoreCase(name) == true)
+			addressBookInterface.edit(personContact);
+		else if(personContact1.getFirstName().equalsIgnoreCase(name) == true)
+			addressBookInterface.edit(personContact1);
+		System.out.println("Contact List after edit");
+		addressBookInterface.print(addressBookStore.getContactList());
+		
 	}
 }
