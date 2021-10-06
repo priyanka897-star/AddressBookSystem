@@ -81,14 +81,11 @@ public class AddressBookMain {
 		personContact1.setZip(is2.inputString());
 		System.out.println("Enter  Phone Number");
 		personContact1.setPhoneNumber(is1.inputString());
-		//is.scannerClose();
-		//is1.scannerClose();
-		//is2.scannerClose();
 		
 		AddressBookStore addressBookStore = new AddressBookStore();
-        addressBookStore.Add(contact);
-        addressBookStore.Add(personContact);
-        addressBookStore.Add(personContact1);
+                addressBookStore.Add(contact);
+                addressBookStore.Add(personContact);
+                addressBookStore.Add(personContact1);
         
 		AddressBookInterface addressBookInterface = new AddressBookInterface();
 		addressBookInterface.print(addressBookStore.getContactList());
@@ -104,6 +101,9 @@ public class AddressBookMain {
 			addressBookInterface.edit(personContact1);
 		System.out.println("Contact List after edit");
 		addressBookInterface.print(addressBookStore.getContactList());
-		
+		is.scannerClose();
+		is1.scannerClose();
+		is2.scannerClose();
+		is3.scannerClose();
 	}
 }
