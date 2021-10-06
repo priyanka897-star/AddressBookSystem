@@ -81,9 +81,6 @@ public class AddressBookMain {
 		personContact1.setZip(is2.inputString());
 		System.out.println("Enter  Phone Number");
 		personContact1.setPhoneNumber(is1.inputString());
-		//is.scannerClose();
-		//is1.scannerClose();
-		//is2.scannerClose();
 		
 		AddressBookStore addressBookStore = new AddressBookStore();
         addressBookStore.Add(contact);
@@ -104,6 +101,25 @@ public class AddressBookMain {
 			addressBookInterface.edit(personContact1);
 		System.out.println("Contact List after edit");
 		addressBookInterface.print(addressBookStore.getContactList());
+		
+		InputScanner is6 = new InputScanner();
+		System.out.println("Enter name of contact you want to delete");
+		String contactName = is6.inputString();
+		if(contact.getFirstName().equalsIgnoreCase(contactName) == true)
+			addressBookStore .remove(contact);
+		else if(personContact.getFirstName().equalsIgnoreCase(contactName) == true)
+			addressBookStore.remove(personContact);
+		else if(personContact1.getFirstName().equalsIgnoreCase(contactName) == true)
+			addressBookStore.remove(personContact1);
+		System.out.println("Contact List after deletion");
+		addressBookInterface.print(addressBookStore.getContactList());
+		
+		is.scannerClose();
+	    is1.scannerClose();
+		is2.scannerClose();
+		is3.scannerClose();
+		is6.scannerClose();
+		
 		
 	}
 }

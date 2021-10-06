@@ -31,4 +31,5 @@ public class AddressBookInterface {
 		contact.setEmail(is4.inputString());
 		
 	}
+	
 }
