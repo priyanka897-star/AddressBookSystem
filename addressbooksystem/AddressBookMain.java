@@ -41,7 +41,6 @@ public class AddressBookMain {
 		String contactPhoneNumber = is.inputString();
 		contact.setPhoneNumber(contactPhoneNumber);
 		
-		
 		AddressBook  personContact = new  AddressBook();
 		System.out.println("Enter Following  Person Contact Details");
 		InputScanner is1 = new InputScanner();
@@ -83,9 +82,9 @@ public class AddressBookMain {
 		personContact1.setPhoneNumber(is1.inputString());
 		
 		AddressBookStore addressBookStore = new AddressBookStore();
-        addressBookStore.Add(contact);
-        addressBookStore.Add(personContact);
-        addressBookStore.Add(personContact1);
+                addressBookStore.Add(contact);
+                addressBookStore.Add(personContact);
+                addressBookStore.Add(personContact1);
         
 		AddressBookInterface addressBookInterface = new AddressBookInterface();
 		addressBookInterface.print(addressBookStore.getContactList());
@@ -115,11 +114,9 @@ public class AddressBookMain {
 		addressBookInterface.print(addressBookStore.getContactList());
 		
 		is.scannerClose();
-	    is1.scannerClose();
+	        is1.scannerClose();
 		is2.scannerClose();
 		is3.scannerClose();
 		is6.scannerClose();
-		
-		
 	}
 }
