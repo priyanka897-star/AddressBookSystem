@@ -2,8 +2,9 @@ package addressbooksystem;
 
 public class AddressBook {
 
-	public String firstName, lastName, address, city, state, email, zip, phoneNumber;
-
+	public String  firstName, lastName, address, city, state, email, zip, phoneNumber;
+	
+	
 	public String getFirstName() {
 		return firstName;
 	}
@@ -11,6 +12,7 @@ public class AddressBook {
 	public void setFirstName(String contactFirstName) {
 		this.firstName = contactFirstName;
 	}
+	
 
 	public String getLastName() {
 		return lastName;
@@ -35,7 +37,7 @@ public class AddressBook {
 	public void setCity(String contactCity) {
 		this.city = contactCity;
 	}
-	
+
 	public String getState() {
 		return state;
 	}
@@ -67,6 +69,13 @@ public class AddressBook {
 	public void setPhoneNumber(String contactPhoneNumber) {
 		this.phoneNumber = contactPhoneNumber;
 	}
-}
+	
 
+	@Override
+	public String toString() {
+		return "AddressBook [firstName=" + firstName + ", lastName=" + lastName + ", address=" + address + ", city="
+				+ city + ", state=" + state + ", email=" + email + ", zip=" + zip + ", phoneNumber=" + phoneNumber
+				+ "]";
+	}
+}
 

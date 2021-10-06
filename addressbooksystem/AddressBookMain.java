@@ -1,5 +1,8 @@
 package addressbooksystem;
 
+//import com.bl.aquarium.AddressBookStore;
+//import com.bl.aquarium.AddressBookInterface;
+
 public class AddressBookMain {
 
 	public static void main(String[] args) {
@@ -8,7 +11,7 @@ public class AddressBookMain {
 		AddressBook contact = new AddressBook();
 		System.out.println("Enter Following Contact Details");
 		InputScanner is = new InputScanner();
-		
+
 		System.out.println("Enter First Name:");
 		String contactFirstName = is.inputString();
 		contact.setFirstName(contactFirstName);
@@ -16,7 +19,7 @@ public class AddressBookMain {
 		System.out.println("Enter Last Name:");
 		String contactLastName = is.inputString();
 		contact.setLastName(contactLastName);
-
+		
 		System.out.println("Enter Address:");
 		String contactAddress = is.inputString();
 		contact.setAddress(contactAddress);
@@ -41,15 +44,25 @@ public class AddressBookMain {
 		String contactPhoneNumber = is.inputString();
 		contact.setPhoneNumber(contactPhoneNumber);
 		is.scannerClose();
+		
+		AddressBook  personContact = new  AddressBook();
+		
+		personContact.setFirstName("sachi");
+		personContact.setLastName("More");
+		personContact.setAddress("fort,Mumbai");
+		personContact.setCity("Mumbai");
+		personContact.setState("Maharashtra");
+		personContact.setEmail("sachimore123@gmail.com");
+		personContact.setZip("415406");
+		personContact.setPhoneNumber("8612458576");
+		is.scannerClose();
 
-		System.out.println(" First Name:" + contact.getFirstName());
-		System.out.println("Last Name:" + contact.getLastName());
-		System.out.println("Address:" + contact.getAddress());
-		System.out.println("City:" + contact.getCity());
-		System.out.println("State :" + contact.getState());
-		System.out.println("Zip:" + contact.getZip());
-		System.out.println("Phone Number:" + contact.getPhoneNumber());
-		System.out.println("Email:" + contact.getEmail());
+		AddressBookStore addressBookStore = new AddressBookStore();
+        addressBookStore.Add(contact);
+        addressBookStore.Add(personContact);
+         
+		 AddressBookInterface addressBookInterface = new AddressBookInterface();
+		 addressBookInterface.print(addressBookStore.getContactList());
 
 	}
 }
