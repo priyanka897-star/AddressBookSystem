@@ -43,26 +43,58 @@ public class AddressBookMain {
 		System.out.println("Enter Phone Number: ");
 		String contactPhoneNumber = is.inputString();
 		contact.setPhoneNumber(contactPhoneNumber);
-		is.scannerClose();
+		
 		
 		AddressBook  personContact = new  AddressBook();
+		System.out.println("Enter Following  Person Contact Details");
+		InputScanner is1 = new InputScanner();
+		System.out.println("Enter First Name:");
+		personContact.setFirstName(is1.inputString());
+		System.out.println("Enter Last Name:");
+		personContact.setLastName(is1.inputString());
+		System.out.println("Enter Address:");
+		personContact.setAddress(is1.inputString());
+		System.out.println("Enter City:");
+		personContact.setCity(is1.inputString());
+		System.out.println("Enter State:");
+		personContact.setState(is1.inputString());
+		System.out.println("Enter Email:");
+		personContact.setEmail(is1.inputString());
+		System.out.println("Enter Zip Code:");
+		personContact.setZip(is1.inputString());
+		System.out.println("Enter  Phone Number");
+		personContact.setPhoneNumber(is1.inputString());
 		
-		personContact.setFirstName("sachi");
-		personContact.setLastName("More");
-		personContact.setAddress("fort,Mumbai");
-		personContact.setCity("Mumbai");
-		personContact.setState("Maharashtra");
-		personContact.setEmail("sachimore123@gmail.com");
-		personContact.setZip("415406");
-		personContact.setPhoneNumber("8612458576");
+		AddressBook  personContact1 = new  AddressBook();
+		System.out.println("Enter Following  Person 1 Contact Details");
+		InputScanner is2 = new InputScanner();
+		System.out.println("Enter First Name:");
+		personContact1.setFirstName(is2.inputString());
+		System.out.println("Enter Last Name:");
+		personContact1.setLastName(is2.inputString());
+		System.out.println("Enter Address:");
+		personContact1.setAddress(is2.inputString());
+		System.out.println("Enter City:");
+		personContact1.setCity(is2.inputString());
+		System.out.println("Enter State:");
+		personContact1.setState(is2.inputString());
+		System.out.println("Enter Email:");
+		personContact1.setEmail(is2.inputString());
+		System.out.println("Enter Zip Code:");
+		personContact1.setZip(is2.inputString());
+		System.out.println("Enter  Phone Number");
+		personContact1.setPhoneNumber(is1.inputString());
 		is.scannerClose();
-
+		is1.scannerClose();
+		is2.scannerClose();
+		
 		AddressBookStore addressBookStore = new AddressBookStore();
         addressBookStore.Add(contact);
         addressBookStore.Add(personContact);
-         
-		 AddressBookInterface addressBookInterface = new AddressBookInterface();
-		 addressBookInterface.print(addressBookStore.getContactList());
+        addressBookStore.Add(personContact1);
+        
+		AddressBookInterface addressBookInterface = new AddressBookInterface();
+		addressBookInterface.print(addressBookStore.getContactList());
 
 	}
 }
