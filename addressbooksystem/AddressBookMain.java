@@ -1,8 +1,5 @@
 package addressbooksystem;
 
-//import com.bl.aquarium.AddressBookStore;
-//import com.bl.aquarium.AddressBookInterface;
-
 public class AddressBookMain {
 
 	public static void main(String[] args) {
@@ -43,7 +40,6 @@ public class AddressBookMain {
 		System.out.println("Enter Phone Number: ");
 		String contactPhoneNumber = is.inputString();
 		contact.setPhoneNumber(contactPhoneNumber);
-		
 		
 		AddressBook  personContact = new  AddressBook();
 		System.out.println("Enter Following  Person Contact Details");
@@ -89,12 +85,11 @@ public class AddressBookMain {
 		is2.scannerClose();
 		
 		AddressBookStore addressBookStore = new AddressBookStore();
-        addressBookStore.Add(contact);
-        addressBookStore.Add(personContact);
-        addressBookStore.Add(personContact1);
+                addressBookStore.Add(contact);
+                addressBookStore.Add(personContact);
+                addressBookStore.Add(personContact1);
         
 		AddressBookInterface addressBookInterface = new AddressBookInterface();
 		addressBookInterface.print(addressBookStore.getContactList());
-
 	}
 }
