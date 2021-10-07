@@ -1,8 +1,7 @@
 package addressbooksystem;
 
-public class AddressBook {
-
-	private String  firstName, lastName, address, city, state, email, zip, phoneNumber;
+public class AddressBook1 {
+    private String  firstName, lastName, address, city, state, email, zip, phoneNumber;
 	
 	
 	public String getFirstName() {
@@ -78,4 +77,7 @@ public class AddressBook {
 				+ "]";
 	}
 }
+
+
+
 

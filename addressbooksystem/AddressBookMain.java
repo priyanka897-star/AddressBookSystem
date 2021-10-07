@@ -27,7 +27,7 @@ public class AddressBookMain {
 		instuction.EnterPhoneNumber();
 		contact.setPhoneNumber(inputScanner.inputString());
 
-		AddressBook personContact = new AddressBook();
+		AddressBook1 personContact = new AddressBook1();
 		System.out.println("Enter Following  Person Contact Details");
 		instuction.EnterFirstName();
 		personContact.setFirstName(inputScanner.inputString());
@@ -72,6 +72,11 @@ public class AddressBookMain {
 
 		AddressBookInterface addressBookInterface = new AddressBookInterface();
 		addressBookInterface.print(addressBookStore.getContactList());
+		
+		AddressBookInterface addressBookInterface1 = new AddressBookInterface();
+		addressBookInterface1.print1(addressBookStore.getContactList1());
+		
+
 
 		int choice;
 		System.out.println("Enter choice 1.Add the new contact\n 2.Edit Existing contact 3.Remove the contact");
@@ -79,18 +84,39 @@ public class AddressBookMain {
 
 		switch (choice) {
 		case 1:
-			System.out.println("Enter how many persons you want to add");
-			int n = inputScanner.inputInteger();
-			for (int i = 1; i <= n; i++) {
-				// AddressBook contact = new AddressBook();
-				addressBookInterface.addContact(contact);
-				addressBookStore.Add(contact);
+			System.out.println("select option 5 to add details to AddressBook and option 6 to add to AddressBookTwo");
+			int option;
+			option = inputScanner.inputInteger();
+			switch(option) {
+		    case 5:
+		    	//AddressBook contact = new AddressBook();
+		    	addressBookInterface.addContact(contact);
+		    	addressBookStore.Add(contact);
 				System.out.println("Contact List after add");
 				addressBookInterface.print(addressBookStore.getContactList());
-			}
+				addressBookInterface1.print1(addressBookStore.getContactList1());
+		    break;	
+		    case 6:
+		    	//AddressBookTwo contact = new AddressBookTwo();
+		    	addressBookInterface.addContact(contact);
+		    	addressBookStore.Add(contact);
+				System.out.println("Contact List after add");
+				addressBookInterface.print(addressBookStore.getContactList());
+				addressBookInterface1.print1(addressBookStore.getContactList1());
 			break;
-		case 2:
-
+			}
+//			System.out.println("Enter how many persons you want to add");
+//			
+//				// AddressBook contact = new AddressBook();
+//				addressBookInterface.addContact(contact);
+//				addressBookStore.Add(contact);
+//				System.out.println("Contact List after add");
+//				addressBookInterface.print(addressBookStore.getContactList());
+//			}
+	
+	 case 2:
+		    
+		
 			System.out.println("Enter name of contact you want to edit");
 			String name = inputScanner.inputString();
 			if (contact.getFirstName().equalsIgnoreCase(name) == true)
@@ -99,19 +125,41 @@ public class AddressBookMain {
 				addressBookInterface.edit(personContact);
 			System.out.println("Contact List after edit");
 			addressBookInterface.print(addressBookStore.getContactList());
+			addressBookInterface1.print1(addressBookStore.getContactList1());
 			break;
+
+//			System.out.println("Enter name of contact you want to edit");
+//			String name = inputScanner.inputString();
+//			if (contact.getFirstName().equalsIgnoreCase(name) == true)
+//				addressBookInterface.edit(contact);
+//			else if (personContact.getFirstName().equalsIgnoreCase(name) == true)
+//				addressBookInterface.edit(personContact);
+//			System.out.println("Contact List after edit");
+//			addressBookInterface.print(addressBookStore.getContactList());
+//			break;
 
 		case 3:
-
-			System.out.println("Enter name of person you want to delete");
-			String personFirstName = inputScanner.inputString();
-			if (contact.getFirstName().equalsIgnoreCase(personFirstName) == true)
+			
+			System.out.println("Enter name of contact you want to edit");
+			String firstName = inputScanner.inputString();
+			if (contact.getFirstName().equalsIgnoreCase(firstName) == true)
 				addressBookStore.remove(contact);
-			else if (personContact.getFirstName().equalsIgnoreCase(personFirstName) == true)
+			else if (personContact.getFirstName().equalsIgnoreCase(firstName) == true)
 				addressBookStore.remove(personContact);
-			System.out.println("Contact List after deletion");
+			System.out.println("Contact List after edit");
 			addressBookInterface.print(addressBookStore.getContactList());
+			addressBookInterface1.print1(addressBookStore.getContactList1());
 			break;
+
+//			System.out.println("Enter name of person you want to delete");
+//			String personFirstName = inputScanner.inputString();
+//			if (contact.getFirstName().equalsIgnoreCase(personFirstName) == true)
+//				addressBookStore.remove(contact);
+//			else if (personContact.getFirstName().equalsIgnoreCase(personFirstName) == true)
+//				addressBookStore.remove(personContact);
+//			System.out.println("Contact List after deletion");
+//			addressBookInterface.print(addressBookStore.getContactList());
+			
 		}
 
  }
