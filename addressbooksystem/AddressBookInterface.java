@@ -10,26 +10,52 @@ public class AddressBookInterface {
 		}
 	}
 
-	void edit(AddressBook contact) {
-		InputScanner is4 = new InputScanner();
+	public void edit(AddressBook contact) {
+		InputScanner inputScanner = new InputScanner();
+
 		System.out.println("Edit the details firstName,lastName,address,city,state,zip,phoneNumber,email respectively");
 		System.out.println("Re-Correct  First Name");
-		contact.setFirstName(is4.inputString());
+		contact.setFirstName(inputScanner.inputString());
 		System.out.println("Re-Correct  Last Name");
-		contact.setLastName(is4.inputString());
+		contact.setLastName(inputScanner.inputString());
 		System.out.println("Re-Correct  Address");
-		contact.setAddress(is4.inputString());
+		contact.setAddress(inputScanner.inputString());
 		System.out.println("Re-Correct  City");
-		contact.setCity(is4.inputString());
+		contact.setCity(inputScanner.inputString());
 		System.out.println("Re-Correct  State");
-		contact.setState(is4.inputString());
+		contact.setState(inputScanner.inputString());
 		System.out.println("Re-Correct  Email");
-		contact.setZip(is4.inputString());
+		contact.setZip(inputScanner.inputString());
 		System.out.println("Re-Correct  Zip Code");
-		contact.setPhoneNumber(is4.inputString());
+		contact.setPhoneNumber(inputScanner.inputString());
 		System.out.println("Re-Correct  Phone Number");
-		contact.setEmail(is4.inputString());
-		
+		contact.setEmail(inputScanner.inputString());
+
+	}
+
+	void addContact(AddressBook personContact) {
+
+		InputScanner inputScanner = new InputScanner();
+		Instruction instruction = new Instruction();
+		System.out.println("Enter  person contact details ");
+		instruction.EnterFirstName();
+		personContact.setFirstName(inputScanner.inputString());
+		instruction.EnterLastName();
+		personContact.setLastName(inputScanner.inputString());
+		instruction.EnterAddress();
+		personContact.setAddress(inputScanner.inputString());
+		instruction.EnterCity();
+		personContact.setCity(inputScanner.inputString());
+		instruction.EnterState();
+		personContact.setState(inputScanner.inputString());
+		instruction.EnterEmail();
+		personContact.setEmail(inputScanner.inputString());
+		instruction.EnterZip();
+		personContact.setZip(inputScanner.inputString());
+		instruction.EnterPhoneNumber();
+		personContact.setPhoneNumber(inputScanner.inputString());
 	}
 	
+	
+
 }
