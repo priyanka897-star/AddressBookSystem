@@ -1,7 +1,6 @@
 package addressbooksystem;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 import java.util.Dictionary;
 import java.util.Hashtable;
 
@@ -10,7 +9,7 @@ public class ContactMain {
 		static Dictionary dictionary = new Hashtable();
 		static Hashtable<Integer, ArrayList<AddContact>> hashTable = new Hashtable<Integer, ArrayList<AddContact>>();
 		Instruction instruction =new Instruction();
-	    static InputScanner inputScanner = new InputScanner();
+	        static InputScanner inputScanner = new InputScanner();
 
 		public static void main(String[] args) {
 			System.out.println("enter the address book limit");
