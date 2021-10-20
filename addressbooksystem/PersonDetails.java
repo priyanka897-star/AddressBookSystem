@@ -1,7 +1,8 @@
 package addressbooksystem;
 
-public class AddressBook1 {
-    private String  firstName, lastName, address, city, state, email, zip, phoneNumber;
+public class PersonDetails {
+
+	private String  firstName, lastName, address, city, state, email, zip, phoneNumber;
 	
 	
 	public String getFirstName() {
@@ -67,7 +68,10 @@ public class AddressBook1 {
 
 	public void setPhoneNumber(String contactPhoneNumber) {
 		this.phoneNumber = contactPhoneNumber;
+		
 	}
+	
+	
 	
 
 	@Override
@@ -76,8 +80,7 @@ public class AddressBook1 {
 				+ city + ", state=" + state + ", email=" + email + ", zip=" + zip + ", phoneNumber=" + phoneNumber
 				+ "]";
 	}
+
+	
 }
-
-
-
 
